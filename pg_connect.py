@@ -24,8 +24,9 @@ def print_dict(d):
 
 ## db_connect: postgres database connection helper
 def db_connect(dbs):
-    conn_str = "host=%s dbname=%s user=%s password=%s"\
-             % (dbs['hostname'], dbs['dbname'], dbs['username'], dbs['password'])
+    conn_str = "host=%s dbname=%s port=%s user=%s password=%s" \
+             % (dbs['hostname'], dbs['dbname'], dbs['port'], \
+                dbs['username'], dbs['password'])
     try:
         conn = psycopg2.connect(conn_str)
         print('Connection Established!')
